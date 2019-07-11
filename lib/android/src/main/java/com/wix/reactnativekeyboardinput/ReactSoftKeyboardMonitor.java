@@ -1,8 +1,9 @@
 package com.wix.reactnativekeyboardinput;
 
 import android.graphics.Rect;
-import android.support.annotation.Nullable;
 import android.view.ViewTreeObserver;
+
+import androidx.annotation.Nullable;
 
 import com.facebook.react.ReactRootView;
 import com.wix.reactnativekeyboardinput.utils.Logger;
@@ -15,6 +16,7 @@ public class ReactSoftKeyboardMonitor implements ReactScreenMonitor.Listener {
 
     public interface Listener {
         void onSoftKeyboardVisible(boolean distinct);
+
         void onSoftKeyboardHidden();
     }
 
@@ -105,12 +107,12 @@ public class ReactSoftKeyboardMonitor implements ReactScreenMonitor.Listener {
     private void initViewportVisibleHeight() {
         mMaxViewportVisibleHeight = getViewportVisibleHeight();
         mLastViewportVisibleHeight = null;
-        Logger.d(TAG, "Measured new max view-port height: "+mMaxViewportVisibleHeight);
+        Logger.d(TAG, "Measured new max view-port height: " + mMaxViewportVisibleHeight);
     }
 
     private void initLocallyVisibleHeight() {
         mLocallyVisibleHeight = getLocallyVisibleHeight();
-        Logger.d(TAG, "Measured locally visible height: "+mLocallyVisibleHeight);
+        Logger.d(TAG, "Measured locally visible height: " + mLocallyVisibleHeight);
         mKeyboardHeight = null; // Reset so the keyboard would be measured in the next opportunity.
     }
 
